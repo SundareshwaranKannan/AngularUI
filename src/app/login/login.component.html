@@ -1,0 +1,23 @@
+<div *ngIf="!userValid" style="text-align:center" id="loginPage">
+  <h1>
+    Login Form
+  </h1>
+  <label>User ID :</label>
+  <input type="number" [(ngModel)]="login.userId" placeholder="userId"><br>
+  <label>Password :</label>
+  <input type="text" [(ngModel)]="login.password" placeholder="password"><br>
+  <button class="btn btn-primary btn-lg" (click)="loginUser()">Login</button>
+  </div>
+<div *ngIf="userValid" style="text-align:center" id="addBook">
+  <label>Author :</label>
+  <input type="text" [(ngModel)]="book.author" placeholder="author"><br>
+  <label>Bookname :</label>
+  <input type="text" [(ngModel)]="book.bookName" placeholder="bookname"><br>
+  <button (click)="addBook()" class="btn btn-primary btn-lg">Add Book</button>
+  <ol>
+    <li *ngFor = "let book of books">
+        {{book.author}}
+        {{book.bookName}} 
+    </li>
+  </ol>
+  </div>
